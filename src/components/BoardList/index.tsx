@@ -2,8 +2,14 @@ import * as React from 'react';
 
 import BoardItem from './boarditem';
 
-export default class BoardList extends React.Component {
+import { IStatusDeclareBordTypes } from '../../types/typeDefined';
+
+export default class BoardList extends React.Component< IStatusDeclareBordTypes, any> {
     
+    constructor(props: IStatusDeclareBordTypes) {
+        super(props);
+    }
+
     public render() {
         return (
             <div className="main-panel">
@@ -16,7 +22,7 @@ export default class BoardList extends React.Component {
                                <span className="icon-bar bar2" />
                                <span className="icon-bar bar3" />
                            </button>
-                           <a className="navbar-brand" href="#">상품 리스트</a>
+                           <a className="navbar-brand" href="#">신고글 리스트</a>
                        </div>
                        <div className="collapse navbar-collapse">
                            <ul className="nav navbar-nav navbar-right">
@@ -61,26 +67,35 @@ export default class BoardList extends React.Component {
                                <div className="card">
                                    <div className="header">
                                        <h4 className="title">신고글 리스트</h4>
-                                       <p className="category">현재 판매되고 있는 상품 명단입니다.</p>
+                                       <p className="category">현재 신고당한 있는 글 명단입니다.</p>
                                    </div>
                                    <div className="content table-responsive table-full-width">
                                        <table className="table table-striped">
                                            <thead>
                                                <tr>
-                                                   <th>순번</th>
-                                                   <th>종류</th>
-                                                   <th>이름</th>
-                                                   <th>가격</th>
-                                                   <th>재고</th>
-                                                   <th>추가 주문</th>
+                                                   <th>ID</th>
+                                                   <th>UUID</th>
+                                                   <th>제목</th>
+                                                   <th>작성일</th>
                                                </tr>
                                            </thead>
                                            <tbody>
-                                               <BoardItem/>
-                                               <BoardItem/>
-                                               <BoardItem/>
-                                               <BoardItem/>
-                                               <BoardItem/>
+                                                {
+                                                    this.props.dataList.map((item, index) => {
+                                                        return (
+                                                            <BoardItem
+                                                                key={index}
+                                                                pk={item.pk}
+                                                                user={item.user}
+                                                                title={item.title}
+                                                                board_id={item.board_id}
+                                                                description={item.description}
+                                                                created={item.created}
+                                                                updated={item.updated}
+                                                            />
+                                                        );
+                                                    }) 
+                                                }
                                            </tbody>
                                        </table>
 

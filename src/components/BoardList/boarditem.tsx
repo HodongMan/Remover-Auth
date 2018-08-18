@@ -1,15 +1,21 @@
 import * as React from 'react';
 
-export default class BoardItem extends React.Component {
+import { IDeclareBoardType } from '../../types/typeDefined';
+
+export default class BoardItem extends React.Component< IDeclareBoardType, any> {
+    
+    constructor(props: IDeclareBoardType) {
+        super(props);
+    }
 
     public render() {
         return (
             <tr>
-                <td>1</td>
-                <td>종류</td>
-                <td>이름</td>
-                <td>가격</td>
-                <td>재고</td>
+                <td>{this.props.pk}</td>
+                <td>{this.props.user}</td>
+                <td>{this.props.title}</td>
+                <td>{this.props.created}</td>
+                <td>삭제할까말까</td>
         </tr>
         );
     }
