@@ -8,14 +8,14 @@ export default class Sidebar extends React.Component {
             <div className="sidebar" data-background-color="white" data-active-color="danger">
                 <div className="sidebar-wrapper">
                     <div className="logo">
-                        <a href="./admin" className="simple-text">
+                        <a href="./" className="simple-text">
                             Moodumdum Admin
                         </a>
                     </div>
 
                     <ul className="nav">
                         <li className="active">
-                            <Link to='/admin'>
+                            <Link to='/'>
                                 <i className="ti-panel" />
                                 <p>메인</p>
                             </Link>
