@@ -16,7 +16,7 @@ export default class Index extends React.Component {
                                     <span className="icon-bar bar2" />
                                     <span className="icon-bar bar3" />
                                 </button>
-                                <a className="navbar-brand" href="#">Dashboard</a>
+                                <a className="navbar-brand" href="/">Dashboard</a>
                             </div>
                             <div className="collapse navbar-collapse">
                                 <ul className="nav navbar-nav navbar-right">

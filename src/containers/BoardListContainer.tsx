@@ -15,13 +15,12 @@ export default class IndexContainer extends React.Component<{}, IStatusDeclareBo
 
     public componentDidMount(): void {
         getDeclareList()
-        .then(result => {
-            this.setState({
-                dataList : result.data,
-            })
-            window.console.log(this.state.dataList);
+        .then( result => {
+            this.setState ( {
+                dataList : result.data.results as IDeclareBoardType[],
+            } )
         })
-        .catch(error => window.console.log(error));
+        .catch( error => window.console.log( error ) );
     }
 
     public render() {

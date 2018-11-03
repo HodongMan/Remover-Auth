@@ -29,7 +29,7 @@ export default class Sidebar extends React.Component {
                         <li>
                             <Link to="/adminitem">
                                 <i className="ti-view-list-alt" />
-                                <p>신고글</p>
+                                <p>신고 글</p>
                             </Link>
                         </li>
                         <li>
