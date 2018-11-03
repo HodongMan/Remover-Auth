@@ -2,7 +2,9 @@ import * as React from 'react';
 
 import './style.css';
 
-export default class Index extends React.Component {
+import { IBoardDataCountType } from '../../types/typeDefined';
+
+export default class Index extends React.Component<IBoardDataCountType, any> {
 
     public render() {
         return (
@@ -68,8 +70,8 @@ export default class Index extends React.Component {
                                                 </div>
                                                 <div className="col-xs-7">
                                                     <div className="numbers">
-                                                        <p>최신글</p>
-                                                        1
+                                                        <p>글의 총 개수</p>
+                                                        {this.props.board_count}
                                                     </div>
                                                 </div>
                                             </div>
@@ -93,15 +95,15 @@ export default class Index extends React.Component {
                                                 </div>
                                                 <div className="col-xs-7">
                                                     <div className="numbers">
-                                                        <p>유저 수</p>
-                                                        2
+                                                        <p>댓글 개수</p>
+                                                        {this.props.comment_count}
                                                     </div>
                                                 </div>
                                             </div>
                                             <div className="footer">
                                                 <hr />
                                                 <div className="stats">
-                                                    <i className="ti-calendar" /> Last day
+                                                    <i className="ti-calendar" /> Updated now
                                                 </div>
                                             </div>
                                         </div>
@@ -118,15 +120,15 @@ export default class Index extends React.Component {
                                                 </div>
                                                 <div className="col-xs-7">
                                                     <div className="numbers">
-                                                        <p>댓글 개수</p>
-                                                        3
+                                                        <p>최신글</p>
+                                                        {this.props.last_day_board_count}
                                                     </div>
                                                 </div>
                                             </div>
                                             <div className="footer">
                                                 <hr />
                                                 <div className="stats">
-                                                    <i className="ti-timer" /> In the last hour
+                                                    <i className="ti-timer" /> Updated now
                                                 </div>
                                             </div>
                                         </div>
@@ -143,8 +145,8 @@ export default class Index extends React.Component {
                                                 </div>
                                                 <div className="col-xs-7">
                                                     <div className="numbers">
-                                                        <p>좋아요 개수</p>
-                                                        4
+                                                        <p>한달 간 글 개수</p>
+                                                        {this.props.last_month_board_count}
                                                     </div>
                                                 </div>
                                             </div>
