@@ -7,5 +7,13 @@ export function getDeclareList(): AxiosPromise<any> {
 }
 
 export function getBoardDataCount(): AxiosPromise<any> {
-    return axios.get(`${kUrl}/api/admin/board/data/count`);
+    return axios.get(`${kUrl}/api/admin/board/data/count/`);
+}
+
+export function getBlackUserList(): AxiosPromise<any> {
+    return axios.get(`${kUrl}/api/blacklist/`);
+}
+
+export function getBoardList(): AxiosPromise<any> {
+    return axios.get(`${kUrl}/api/admin/board/`);
 }

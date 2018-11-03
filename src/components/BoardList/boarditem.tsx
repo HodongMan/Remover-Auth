@@ -1,22 +1,22 @@
 import * as React from 'react';
 
-import { IDeclareBoardType } from '../../types/typeDefined';
+import { IBoardType } from '../../types/typeDefined';
 
-export default class BoardItem extends React.Component< IDeclareBoardType, any> {
+export default class BoardItem extends React.Component< IBoardType, any> {
     
-    constructor(props: IDeclareBoardType) {
-        super(props);
+    constructor( props: IBoardType ) {
+        super( props );
     }
 
     public render() {
         return (
             <tr>
                 <td>{this.props.pk}</td>
-                <td>{this.props.user}</td>
-                <td>{this.props.title}</td>
+                <td>{this.props.user_id}</td>
+                <td>{this.props.description}</td>
                 <td>{this.props.created}</td>
-                <td>삭제할까말까</td>
-        </tr>
+                <td>{this.props.views}</td>
+            </tr>
         );
     }
 }

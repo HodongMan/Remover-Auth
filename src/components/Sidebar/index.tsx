@@ -27,28 +27,28 @@ export default class Sidebar extends React.Component {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/adminitem">
+                            <Link to="/declare">
                                 <i className="ti-view-list-alt" />
                                 <p>신고 글</p>
                             </Link>
                         </li>
                         <li>
-                            <Link to="/adminpayment">
+                            <Link to="/black">
                                 <i className="ti-text" />
-                                <p>신고글</p>
+                                <p>차단 유저</p>
                             </Link>
                         </li>
                         <li>
-                            <a href="icons.html">
+                            <Link to="/">
                                 <i className="ti-pencil-alt2" />
-                                <p>신고글</p>
-                            </a>
+                                <p>아직 없음</p>
+                            </Link>
                         </li>
                         <li>
-                            <a href="icons.html">
+                            <Link to="/">
                                 <i className="ti-pencil-alt2" />
-                                <p>신고글</p>
-                            </a>
+                                <p>아직 없음</p>
+                            </Link>
                         </li>
 
                     </ul>

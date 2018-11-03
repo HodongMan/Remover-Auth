@@ -2,8 +2,10 @@ import * as React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import {
-  BoardListContainer, 
-  IndexContainer,
+    BlackUserListContainer,
+    BoardListContainer,
+    DeclareListContainer, 
+    IndexContainer,
 } from './containers';
 
 import 'bootstrap/dist/css/bootstrap-theme.css';
@@ -17,6 +19,8 @@ class App extends React.Component {
                     <Switch>
                         <Route exact={true} path="/" component={IndexContainer} />
                         <Route path="/board" component={BoardListContainer} />
+                        <Route path="/declare" component={DeclareListContainer} />
+                        <Route path="/black" component={BlackUserListContainer} />
                     </Switch>
                 </div>
             </Router>

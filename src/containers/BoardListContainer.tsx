@@ -1,23 +1,23 @@
 import * as React from 'react';
 
 import { BoardList, Sidebar } from '../components';
-import { getDeclareList } from '../lib/toServer';
-import { IDeclareBoardType, IStatusDeclareBordTypes } from '../types/typeDefined';
+import { getBoardList } from '../lib/toServer';
+import { IBoardType, IStatusBoardTypes } from '../types/typeDefined';
 
-export default class IndexContainer extends React.Component<{}, IStatusDeclareBordTypes> {
+export default class IndexContainer extends React.Component<{}, IStatusBoardTypes> {
 
     constructor(props: {}) {
         super(props);
         this.state = {
-            dataList: [] as IDeclareBoardType[],
+            boardList: [] as IBoardType[],
         }
     }
 
     public componentDidMount(): void {
-        getDeclareList()
+        getBoardList()
         .then( result => {
             this.setState ( {
-                dataList : result.data.results as IDeclareBoardType[],
+                boardList : result.data.results as IBoardType[],
             } )
         })
         .catch( error => window.console.log( error ) );
@@ -28,7 +28,7 @@ export default class IndexContainer extends React.Component<{}, IStatusDeclareBo
             <div className='wrapper'>
                 <Sidebar/>
                 <BoardList
-                    dataList={this.state.dataList}
+                    boardList={this.state.boardList}
                 />
             </div>
         );

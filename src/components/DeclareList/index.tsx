@@ -1,14 +1,14 @@
 import * as React from 'react';
 
-import BoardItem from './boarditem';
+import DeclareItem from './declareitem';
 
-import { IStatusBoardTypes } from '../../types/typeDefined';
+import { IStatusDeclareBordTypes } from '../../types/typeDefined';
 
-export default class BoardList extends React.Component< IStatusBoardTypes, any> {
+export default class DeclareList extends React.Component< IStatusDeclareBordTypes, any> {
     
     public render() {
-        
-        if ( typeof this.props.boardList )
+
+        if ( typeof this.props.dataList )
         {
             return (
                 <div className="main-panel">
@@ -21,7 +21,7 @@ export default class BoardList extends React.Component< IStatusBoardTypes, any> 
                                     <span className="icon-bar bar2" />
                                     <span className="icon-bar bar3" />
                                 </button>
-                                <a className="navbar-brand" href="#">글 리스트</a>
+                                <a className="navbar-brand" href="#">신고글 리스트</a>
                             </div>
                             <div className="collapse navbar-collapse">
                                 <ul className="nav navbar-nav navbar-right">
@@ -65,8 +65,8 @@ export default class BoardList extends React.Component< IStatusBoardTypes, any> 
                                 <div className="col-md-12">
                                     <div className="card">
                                         <div className="header">
-                                            <h4 className="title">글 리스트</h4>
-                                            <p className="category">현재 올라온 글 리스트 입니다.</p>
+                                            <h4 className="title">신고글 리스트</h4>
+                                            <p className="category">현재 신고당한 있는 글 명단입니다.</p>
                                         </div>
                                         <div className="content table-responsive table-full-width">
                                             <table className="table table-striped">
@@ -74,25 +74,20 @@ export default class BoardList extends React.Component< IStatusBoardTypes, any> 
                                                     <tr>
                                                         <th>ID</th>
                                                         <th>UUID</th>
-                                                        <th>카테고리</th>
-                                                        <th>내용</th>
+                                                        <th>제목</th>
+                                                        <th>작성일</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     {
-                                                        this.props.boardList.map((item, index) => 
-                                                            <BoardItem
+                                                        this.props.dataList.map((item, index) => 
+                                                            <DeclareItem
                                                                 key={index}
                                                                 pk={item.pk}
-                                                                category_id={item.category_id}
-                                                                user_id={item.user_id}
+                                                                user={item.user}
+                                                                title={item.title}
+                                                                board_id={item.board_id}
                                                                 description={item.description}
-                                                                views={item.views}
-                                                                comment_count={item.comment_count}
-                                                                image_url={item.image_url}
-                                                                background_color={item.background_color}
-                                                                color={item.color}
-                                                                like_count={item.like_count}
                                                                 created={item.created}
                                                                 updated={item.updated}
                                                             />
