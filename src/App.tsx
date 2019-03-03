@@ -2,6 +2,10 @@ import * as React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import {
+    ServiceTerm,
+} from './components';
+
+import {
     BlackUserListContainer,
     BoardListContainer,
     DeclareListContainer, 
@@ -21,6 +25,7 @@ class App extends React.Component {
                         <Route path="/board" component={BoardListContainer} />
                         <Route path="/declare" component={DeclareListContainer} />
                         <Route path="/black" component={BlackUserListContainer} />
+                        <Route path="/term" component={ServiceTerm}/>
                     </Switch>
                 </div>
             </Router>
